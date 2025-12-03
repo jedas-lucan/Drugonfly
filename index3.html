@@ -181,7 +181,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-
 /* PURCHASE MODAL -------------------------------------------------------*/
 let currentProduct = "";
 
@@ -197,7 +196,6 @@ function closePurchase() {
 }
 
 
-
 /* ============================================================= */
 /* =========   메일 전송 (첫 페이지 방식 그대로 복원)  ========= */
 /* ============================================================= */
@@ -209,17 +207,16 @@ function confirmPurchase() {
     return;
   }
 
-  /* 🔥 첫 페이지에서 메일 성공했던 구글폼 URL */
+  /* ✅ 첫 페이지에서 메일 성공했던 구글폼 URL (같은 시트/트리거로 보내야 함) */
   const formURL =
-    "https://docs.google.com/forms/d/e/1FAIpQLSd3NwOYayoYjPpudruf2i0tPVFBlZJH0iy4wZhGE9zdWunRVA/formResponse";
+    "https://docs.google.com/forms/d/1D5BV44ocn7nVOxrMXBOEOAELT8s2BcGoi6K3LqjGRb0/formResponse";
 
-  /* 🔥 첫 페이지에서 쓰던 entry 번호 그대로 */
+  /* ✅ 첫 페이지에서 쓰던 entry 번호 그대로 */
   const entryID = "entry.70548093";
 
   const data = new FormData();
   data.append(entryID, email);
 
-  /* 🔥 첫 페이지와 완전히 동일한 submit 방식 */
   fetch(formURL, {
     method: "POST",
     body: data,
