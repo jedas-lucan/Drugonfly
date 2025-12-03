@@ -1,66 +1,216 @@
-<script>
-function shuffleSidebarImages(sidebarClass) {
-  const sidebars = document.getElementsByClassName(sidebarClass);
-  Array.from(sidebars).forEach(sidebar => {
-    const imgs = Array.from(sidebar.querySelectorAll('img'));
-    // 랜덤 순서 섞기 (Fisher-Yates)
-    for (let i = imgs.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [imgs[i], imgs[j]] = [imgs[j], imgs[i]];
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>sale</title>
+  <link rel="stylesheet" href="style3.css">
+  <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&family=Inria+Serif:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body style="background-image: url('https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcmFqenlvdGUxZDVodTJnNncxaGxweTF2MXkxMHhhZjJhbGswNXlseiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l2QEacj2yBTxRlWq4/giphy.gif'); width: 100vw;">
+
+  <!-- 헤더 -->
+  <header class="main-header">
+    <img src="drugonflygraph.png">
+    <h2 class="glitch"
+        data-text="Brain popping pleasure!"
+        style="align-self: center;color:pink; font-size: 3.4rem;
+               font-weight:900; margin-left: 240px; margin-right: 240px;">
+      Brain popping pleasure!
+    </h2>
+    <img src="drugonflygraph.png">
+  </header>
+
+  <!-- 메인 레이아웃 -->
+  <div class="layout">
+    <aside class="sidebar left">
+      <img src="bettle1.jpg">
+      <img src="poster4.jpg">
+      <img src="pinkmantis1.jpg">
+      <img src="Spider1.jpg">
+    </aside>
+
+    <div class="floating-banner">
+      <span class="floating-text">Find your perfect hit</span>
+    </div>
+
+    <main class="main-content1"
+          style="background-image: url(https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3cjN5OHp3MGswazE4NnhxZG5jNHJrMHRraWJzMWI4emozb2Jyb3ZqZCZlcD12MV9naWZzX3JlbGF0ZWQmY3Q9Zw/0ED03ilvyFm6mkzQQx/giphy.gif);
+                 width: 120%;">
+      <div class="main-content" style="background-color: transparent;">
+
+        <!-- 아이템 카드 1 -->
+        <div class="item-card sold">
+          <div class="item-img">
+            <img src="drink 2.png" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="item-desc">
+            <h3 class="item-title">
+              Velvet Coil Reserve
+              <span class="item-price">– 95 credits</span>
+            </h3>
+            <p class="item-effect">Effect: Brief time-split vision</p>
+            <p class="item-text">
+              A rolled cocktail that delays your senses by half a second.
+            </p>
+            <span class="tag-ribbon">SOLD OUT</span>
+          </div>
+        </div>
+
+        <!-- 아이템 카드 2 -->
+        <div class="item-card sold">
+          <div class="item-img">
+            <img src="powder 3.png" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="item-desc">
+            <h3 class="item-title">
+              Blush Drift
+              <span class="item-price">– 180 credits</span>
+            </h3>
+            <p class="item-effect">Effect: Quick euphoria, soft visuals.</p>
+            <p class="item-text">
+              Pink powder you inhale; gives a light floating feeling.
+            </p>
+            <span class="tag-ribbon">SOLD OUT</span>
+          </div>
+        </div>
+
+        <!-- 아이템 카드 3 -->
+        <div class="item-card">
+          <div class="item-img">
+            <img src="candy 2.png" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="item-desc mint">
+            <h3 class="item-title">
+              Loverbite Crystal
+              <span class="item-price">– 270 credits</span>
+            </h3>
+            <p class="item-effect">Effect: Shared desire between two users.</p>
+            <p class="item-text">
+              Heart candy eaten often while kissing.
+            </p>
+
+            <button class="buy-btn" onclick="openPurchase('Loverbite Crystal')">
+              Buy
+            </button>
+          </div>
+        </div>
+
+        <!-- 아이템 카드 4 -->
+        <div class="item-card sold">
+          <div class="item-img">
+            <img src="powder 4.png" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="item-desc">
+            <h3 class="item-title">
+              DreamPatch Nimbus
+              <span class="item-price">– 180 credits</span>
+            </h3>
+            <p class="item-effect">Effect: Quick euphoria, soft visuals.</p>
+            <p class="item-text">
+              Pink powder you inhale; gives a light floating feeling.
+            </p>
+            <span class="tag-ribbon">SOLD OUT</span>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <aside class="sidebar right">
+      <img src="pinkmantis1.jpg">
+      <img src="Spider1.jpg">
+      <img src="bettle1.jpg">
+      <img src="poster4.jpg">
+    </aside>
+  </div>
+
+  <!-- 구매 모달 -->
+  <div id="purchase-modal" class="purchase-modal">
+    <div class="purchase-box">
+      <p class="purchase-title">Confirm purchase</p>
+      <p class="purchase-text">
+        Do you really want to buy <span id="product-name"></span>?<br>
+        <span>We are not responsible for any issues<br>that occur during use.</span>
+      </p>
+      <input type="email" id="purchase-email" class="purchase-input" placeholder="Enter your email">
+      <div class="purchase-actions">
+        <button onclick="confirmPurchase()">Confirm</button>
+        <button onclick="closePurchase()">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 메인으로 돌아가기 -->
+  <button id="to-top-btn" onclick='window.location.href="index.html";'>
+    Back to main
+  </button>
+
+  <!-- 스크립트 -->
+  <script>
+    // 사이드바 이미지 셔플
+    function shuffleSidebarImages(sidebarClass) {
+      const sidebars = document.getElementsByClassName(sidebarClass);
+      Array.from(sidebars).forEach(sidebar => {
+        const imgs = Array.from(sidebar.querySelectorAll('img'));
+        for (let i = imgs.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [imgs[i], imgs[j]] = [imgs[j], imgs[i]];
+        }
+        sidebar.innerHTML = '';
+        imgs.forEach(img => sidebar.appendChild(img));
+      });
     }
-    // 기존 이미지 제거 후 새 순서대로 추가
-    sidebar.innerHTML = '';
-    imgs.forEach(img => sidebar.appendChild(img));
-  });
-}
 
-document.addEventListener('DOMContentLoaded', function () {
-  // 최초 실행
-  shuffleSidebarImages('sidebar');
-  setInterval(function () {
-    shuffleSidebarImages('sidebar');
-  }, 1500);
-});
+    document.addEventListener('DOMContentLoaded', function () {
+      shuffleSidebarImages('sidebar');
+      setInterval(function () {
+        shuffleSidebarImages('sidebar');
+      }, 1500);
+    });
 
-let currentProduct = "";
+    // 구매 모달 동작
+    let currentProduct = "";
 
-function openPurchase(name) {
-  currentProduct = name;
-  document.getElementById("product-name").textContent = name;
-  document.getElementById("purchase-email").value = "";
-  document.getElementById("purchase-modal").style.display = "flex";
-}
+    function openPurchase(name) {
+      currentProduct = name;
+      document.getElementById("product-name").textContent = name;
+      document.getElementById("purchase-email").value = "";
+      document.getElementById("purchase-modal").style.display = "flex";
+    }
 
-function closePurchase() {
-  document.getElementById("purchase-modal").style.display = "none";
-}
+    function closePurchase() {
+      document.getElementById("purchase-modal").style.display = "none";
+    }
 
-// 🔥 여기부터 수정된 부분
-function confirmPurchase() {
-  const email = document.getElementById("purchase-email").value.trim();
-  if (!email) {
-    alert("Please enter your email to continue.");
-    return;
-  }
+    // ✅ 이메일을 구글폼으로 보내는 부분
+    function confirmPurchase() {
+      const email = document.getElementById("purchase-email").value.trim();
+      if (!email) {
+        alert("Please enter your email to continue.");
+        return;
+      }
 
-  // 네가 쓰는 구글 폼 응답 URL
-  const formURL =
-    "https://docs.google.com/forms/d/1D5BV44ocn7nVOxrMXBOEOAELT8s2BcGoi6K3LqjGRb0/formResponse";
+      // 이미 메인 페이지에서 쓰고 있는, 잘 작동하던 구글 폼 URL & entry 값 그대로 사용
+      const formURL =
+        "https://docs.google.com/forms/d/e/1FAIpQLSd3NwOYayoYjPpudruf2i0tPVFBlZJH0iy4wZhGE9zdWunRVA/formResponse";
+      const entryID = "entry.70548093";  // 이메일 필드 entry
 
-  // 이메일이 연결된 entry ID (앞에서 찾았던 값)
-  const entryID = "entry.70548093";
+      const data = new FormData();
+      data.append(entryID, email);
 
-  const data = new FormData();
-  data.append(entryID, email);
+      // 폼으로 POST (시트 + Apps Script 트리거)
+      fetch(formURL, {
+        method: "POST",
+        body: data,
+        mode: "no-cors"
+      });
 
-  // 폼으로 전송 (시트/Apps Script 트리거 실행용)
-  fetch(formURL, {
-    method: "POST",
-    body: data,
-    mode: "no-cors"
-  });
+      alert("Check your inbox. Yuri just slid into your mail.");
+      closePurchase();
+    }
+  </script>
 
-  alert("Check your inbox. Yuri just slid into your mail.");
-  closePurchase();
-}
-</script>
+</body>
+</html>
