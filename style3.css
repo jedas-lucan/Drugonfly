@@ -53,6 +53,7 @@ body {
 .main-content1 {
   flex: 1;
   min-height: 100vh;
+  background: transparent !important; /* ← 하얀 배경 제거 */
   background-size: cover;
   background-position: center;
   padding: 40px 0;
@@ -61,7 +62,7 @@ body {
 .main-content {
   width: 1000px;
   margin: 0 auto;
-  background: transparent;
+  background: transparent !important; 
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -75,8 +76,13 @@ body {
   width: 90%;
   max-width: 820px;
   margin: 0 auto;
-  background: transparent;
-  box-shadow: 0 3px 24px rgba(0,0,0,0.2);
+
+  /* 완전 투명 */
+  background: transparent !important;
+  
+  /* 흰 박스처럼 보이던 그림자 제거 */
+  box-shadow: none !important;
+
   border-radius: 0px;
   overflow: hidden;
   transition: 0.3s;
@@ -96,7 +102,7 @@ body {
   opacity: 0;
   transform: translateY(20px);
   transition: 0.4s;
-  color: black;
+  color: white; /* 검정 대신 neon에 어울리는 white 추천 */
 }
 
 .item-card:hover .item-desc {
@@ -119,7 +125,7 @@ body {
   margin: 0;
 }
 
-/* TAG */
+/* TAG ---------------------------------------------------------------*/
 .tag-ribbon {
   position: absolute;
   top: 8px;
@@ -130,7 +136,7 @@ body {
   transform: rotate(23deg);
 }
 
-/* PURCHASE -----------------------------------------------------------*/
+/* PURCHASE MODAL -----------------------------------------------------*/
 .purchase-modal {
   position: fixed;
   inset: 0;
@@ -148,7 +154,7 @@ body {
   box-shadow: 0 0 25px #ff20ec;
 }
 
-/* BUTTON */
+/* BUTTON -------------------------------------------------------------*/
 .buy-btn {
   padding: 8px 20px;
   border-radius: 999px;
