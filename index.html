@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Right way of Madness</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Right way of Madness</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body style="background-image: url('https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExa24zY2ljbG55cTMxdDZ1YnptdnplcXE4NXlvMmJ4ZXZydW53MHk4eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/v27AT0zwkNDcBp9hjc/giphy.gif');">
 
-  <!-- 상단 GIF 헤더 -->
   <header>
     <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZG5ld2kwaWZxcG80N2g1YXIxMTU4czZ1MjI0OGR3M3BrZmN2cHFhMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/rTL8ot2Ojng0x9BFoP/giphy.gif">
     <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExeHZsYnZuY215bTdjbXZtNGpueWhwamN6N3kzeG11aTJjNHA1ZXozbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/2OzVql4vs4nFo6u47W/giphy.gif">
@@ -24,120 +23,105 @@
     <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNXBsbjljcmIwZjF1a3AwdGxncW04bGc4Mm10dnpmOG9xN251eDV2bSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/JZV9T0LmEIENTkcLQ6/giphy.gif">
   </header>
 
-  <!-- 떠다니는 버튼 -->
-  <img
-    src="happybutton.png"
-    id="floating-btn"
-    style="position: fixed; width: 100px; height: 100px; left: 40px; top: 200px; z-index: 9999; cursor: pointer;"
-  >
+<img src="happybutton.png" id="floating-btn"
+  style="position: fixed; width: 100px; height: 100px; left: 40px; top: 200px; z-index: 9999; cursor: pointer;">
 
-  <div class="layout">
-    <!-- 좌측 사이드바 -->
-    <aside class="sidebar left">
-      <img src="pinkmantis1.jpg">
-      <img src="Spider1.jpg">
-      <img src="bettle1.jpg">
-      <img src="poster4.jpg">
-    </aside>
+<div class="layout">
+  <aside class="sidebar left">
+    <img src="pinkmantis1.jpg">
+    <img src="Spider1.jpg">
+    <img src="bettle1.jpg">
+    <img src="poster4.jpg">
+  </aside>
 
-    <!-- 메인 콘텐츠 -->
-    <main class="main-content" style="background-color: transparent;">
-      <div class="hero-wrap">
-        <img src="mainimage_yuri.png" class="hero-img">
+  <main class="main-content" style="background-color: transparent;">
+    <div class="hero-wrap">
+      <img src="mainimage_yuri.png" class="hero-img">
 
-        <!-- CTA 영역 -->
-        <div class="cta-box">
-          <!-- Join Now 버튼 -->
-          <button class="join-btn" onclick="window.location.href='index2.html'">
-            <img src="button_m.png" class="join-img">
-          </button>
+      <!-- CTA -->
+      <div class="cta-box">
+        <button class="join-btn" onclick="window.location.href='index2.html'">
+          <img src="button_m.png" class="join-img">
+        </button>
 
-          <!-- 이메일 입력 영역 -->
-          <div class="email-wrap">
-            <!-- 클래스 이름 소문자로 통일 -->
-            <img src="Welcome.png" class="welcome-img">
+        <div class="email-wrap">
+          <img src="Welcome.png" class="Welcome-img">
 
-            <!-- 🔥 여기서부터 구글 폼으로 바로 쏘는 form -->
-            <form
-              class="email-row"
-              action="https://docs.google.com/forms/d/1D5BV44ocn7nVOxrMXBOEOAELT8s2BcGoi6K3LqjGRb0/formResponse"
-              method="POST"
-              target="hidden_iframe"
-              onsubmit="afterSubmit()"
-            >
-              <input
-                type="email"
-                class="email-input"
-                name="entry.70548093"
-                placeholder="Email to subscribe"
-                required
-              >
-              <button class="arrow-btn" type="submit">➜</button>
-            </form>
-            <!-- 🔥 form 끝 -->
+          <div class="email-row">
+            <input id="emailInput" type="email" class="email-input" placeholder="Email to subscribe">
+            <button id="submitBtn" class="arrow-btn">➜</button>
           </div>
         </div>
       </div>
-    </main>
+    </div>
+  </main>
 
-    <!-- 우측 사이드바 -->
-    <aside class="sidebar right">
-      <img src="bettle1.jpg">
-      <img src="poster4.jpg">
-      <img src="pinkmantis1.jpg">
-      <img src="Spider1.jpg">
-    </aside>
-  </div>
+  <aside class="sidebar right">
+    <img src="bettle1.jpg">
+    <img src="poster4.jpg">
+    <img src="pinkmantis1.jpg">
+    <img src="Spider1.jpg">
+  </aside>
+</div>
 
-  <footer>
-    <!-- 푸터 내용 -->
-  </footer>
+<footer></footer>
 
-  <!-- 폼이 전송될 때 화면이 안 튀도록 막아주는 숨겨진 iframe -->
-  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
-
-  <!-- 스크립트 -->
-  <script>
-    // 사이드바 이미지 셔플
-    function shuffleSidebarImages(sidebarClass) {
-      const sidebars = document.getElementsByClassName(sidebarClass);
-      Array.from(sidebars).forEach(sidebar => {
-        const imgs = Array.from(sidebar.querySelectorAll('img'));
-        for (let i = imgs.length - 1; i > 0; i--) {
-          const j = Math.floor(Math.random() * (i + 1));
-          [imgs[i], imgs[j]] = [imgs[j], imgs[i]];
-        }
-        sidebar.innerHTML = '';
-        imgs.forEach(img => sidebar.appendChild(img));
-      });
+<script>
+// 사이드바 움직이는 기존 코드 유지
+function shuffleSidebarImages(sidebarClass) {
+  const sidebars = document.getElementsByClassName(sidebarClass);
+  Array.from(sidebars).forEach(sidebar => {
+    const imgs = Array.from(sidebar.querySelectorAll('img'));
+    for (let i = imgs.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [imgs[i], imgs[j]] = [imgs[j], imgs[i]];
     }
+    sidebar.innerHTML = '';
+    imgs.forEach(img => sidebar.appendChild(img));
+  });
+}
 
-    document.addEventListener('DOMContentLoaded', function () {
-      shuffleSidebarImages('sidebar');
-      setInterval(function () {
-        shuffleSidebarImages('sidebar');
-      }, 1500);
-    });
+document.addEventListener('DOMContentLoaded', function () {
+  shuffleSidebarImages('sidebar');
+  setInterval(() => shuffleSidebarImages('sidebar'), 1500);
+});
 
-    // 떠다니는 버튼 랜덤 위치 이동
-    const floatingBtn = document.getElementById('floating-btn');
-    function moveBtnRandomly() {
-      const maxX = window.innerWidth - 100;
-      const maxY = window.innerHeight - 100;
-      const newX = Math.random() * maxX;
-      const newY = Math.random() * maxY;
-      floatingBtn.style.left = newX + 'px';
-      floatingBtn.style.top = newY + 'px';
-    }
-    setInterval(moveBtnRandomly, 1200);
-    floatingBtn.addEventListener('click', function() {
-      window.location.href = "index2.html";
-    });
+// Floating button 유지
+const floatingBtn = document.getElementById('floating-btn');
+function moveBtnRandomly() {
+  const maxX = window.innerWidth - 100;
+  const maxY = window.innerHeight - 100;
+  floatingBtn.style.left = Math.random() * maxX + 'px';
+  floatingBtn.style.top = Math.random() * maxY + 'px';
+}
+setInterval(moveBtnRandomly, 1200);
 
-    // 폼 전송 후 알림
-    function afterSubmit() {
-      alert("Check your inbox. Yuri just slid into your mail.");
-    }
-  </script>
+// ================================
+// ✨ 이메일 전송 기능 추가 부분
+// ================================
+const formURL = "https://docs.google.com/forms/d/e/1FAIpQLSd3NwOYayoYjPpudruf2i0tPVFBlZJH0iy4wZhGE9zdWunRVA/formResponse";
+const entryID = "YOUR_ENTRY_ID_HERE";  // ← 반드시 네 entry 이름으로 교체
+
+document.getElementById("submitBtn").addEventListener("click", function () {
+  const email = document.getElementById("emailInput").value;
+  if (!email) {
+    alert("Your Email Here!");
+    return;
+  }
+
+  const data = new FormData();
+  data.append(entryID, email);
+
+  fetch(formURL, {
+    method: "POST",
+    body: data,
+    mode: "no-cors"
+  });
+
+  alert("Check your inbox. Yuri just slid into your mail.");
+  document.getElementById("emailInput").value = "";
+});
+</script>
+
 </body>
 </html>
