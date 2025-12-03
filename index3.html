@@ -9,83 +9,184 @@
     <link rel="stylesheet" href="style3.css">
     <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&family=Inria+Serif:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Explora&display=swap" rel="stylesheet">
-
 </head>
 
-<body style="background-image: url('https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcmFqenlvdGUxZDVodTJnNncxaGxweTF2MXkxMHhhZjJhbGswNXlseiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l2QEacj2yBTxRlWq4/giphy.gif'); width: 100vw;">
+<body>
 
 <header class="main-header">
-    <img src="drugonflygraph.png">
+    <img src="drugonflygraph.png" class="header-img">
 
-    <h2 class="glitch" data-text="Brain popping pleasure!"
-    style="align-self: center; color:pink; font-size: 7.4rem;
-           font-family:'Explora', cursive;
-           font-weight:400; 
-           margin-left: 240px; margin-right: 240px;">
-    Brain popping pleasure!
-</h2>
+    <h2 class="header-title">
+        Brain popping pleasure!
+    </h2>
 
-    <img src="drugonflygraph.png">
+    <img src="drugonflygraph.png" class="header-img">
 </header>
 
 
 <div class="layout">
-  <aside class="sidebar left">
-    <img src="bettle1.jpg">
-    <img src="poster4.jpg">
-    <img src="pinkmantis1.jpg">
-    <img src="Spider1.jpg">
-  </aside>
 
-  
-  <div class="floating-banner">
-    <span class="floating-text">Find your perfect hit</span>
-  </div>
+    <!-- LEFT SIDEBAR -->
+    <aside class="sidebar left">
+        <img src="bettle1.jpg">
+        <img src="poster4.jpg">
+        <img src="pinkmantis1.jpg">
+        <img src="Spider1.jpg">
+    </aside>
 
 
-  <main class="main-content1"
-        style="background-image: url(https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3cjN5OHp3MGswazE4NnhxZG5jNHJrMHRraWJzMWI4emozb2Jyb3ZqZCZlcD12MV9naWZzX3JlbGF0ZWQmY3Q9Zw/0ED03ilvyFm6mkzQQx/giphy.gif);
-               width: 120%;">
-
-<div class="main-content" style="background-color: transparent;">
-
-
-  <!-- ITEM 1 --------------------------------------->
-  <div class="item-card sold">
-    <div class="item-img">
-      <img src="drink 2.png" style="width:100%; height:100%; object-fit:cover;">
+    <!-- FLOATING BANNER -->
+    <div class="floating-banner">
+        <span class="floating-text">Find your perfect hit</span>
     </div>
-    <div class="item-desc">
-      <h3 class="item-title">
-        Velvet Coil Reserve
-        <span class="item-price">– 95 credits</span>
-      </h3>
-      <p class="item-effect">Effect: Brief time-split vision</p>
-      <p class="item-text">A rolled cocktail that delays your senses by half a second.</p>
-      <span class="tag-ribbon">SOLD OUT</span>
-    </div>
-  </div>
 
 
-  <!-- ITEM 2 --------------------------------------->
-  <div class="item-card sold">
-    <div class="item-img">
-      <img src="powder 3.png" style="width:100%; height:100%; object-fit:cover;">
-    </div>
-    <div class="item-desc">
-      <h3 class="item-title">
-        Blush Drift
-        <span class="item-price">– 180 credits</span>
-      </h3>
-      <p class="item-effect">Effect: Quick euphoria, soft visuals.</p>
-      <p class="item-text">Pink powder you inhale; gives a light floating feeling.</p>
-      <span class="tag-ribbon">SOLD OUT</span>
-    </div>
-  </div>
+    <!-- MAIN CONTENT AREA -->
+    <main class="main-content1">
+        <div class="main-content">
+
+            <!-- ITEM 1 -->
+            <div class="item-card sold">
+                <div class="item-img">
+                    <img src="drink 2.png">
+                </div>
+                <div class="item-desc">
+                    <h3 class="item-title">
+                        Velvet Coil Reserve
+                        <span class="item-price">– 95 credits</span>
+                    </h3>
+                    <p class="item-effect">Effect: Brief time-split vision</p>
+                    <p class="item-text">A rolled cocktail that delays your senses by half a second.</p>
+                    <span class="tag-ribbon">SOLD OUT</span>
+                </div>
+            </div>
+
+            <!-- ITEM 2 -->
+            <div class="item-card sold">
+                <div class="item-img">
+                    <img src="powder 3.png">
+                </div>
+                <div class="item-desc">
+                    <h3 class="item-title">
+                        Blush Drift
+                        <span class="item-price">– 180 credits</span>
+                    </h3>
+                    <p class="item-effect">Effect: Quick euphoria, soft visuals.</p>
+                    <p class="item-text">Pink powder you inhale; gives a light floating feeling.</p>
+                    <span class="tag-ribbon">SOLD OUT</span>
+                </div>
+            </div>
+
+            <!-- ITEM 3 -->
+            <div class="item-card">
+                <div class="item-img">
+                    <img src="candy 2.png">
+                </div>
+                <div class="item-desc mint">
+                    <h3 class="item-title">
+                        Loverbite Crystal
+                        <span class="item-price">– 270 credits</span>
+                    </h3>
+                    <p class="item-effect">Effect: Shared desire between two users.</p>
+                    <p class="item-text">Heart candy eaten often while kissing.</p>
+
+                    <button class="buy-btn" onclick="openPurchase('Loverbite Crystal')">Buy</button>
+                </div>
+            </div>
+
+            <!-- ITEM 4 -->
+            <div class="item-card sold">
+                <div class="item-img">
+                    <img src="powder 4.png">
+                </div>
+                <div class="item-desc">
+                    <h3 class="item-title">
+                        DreamPatch Nimbus
+                        <span class="item-price">– 180 credits</span>
+                    </h3>
+                    <p class="item-effect">Effect: Quick euphoria, soft visuals.</p>
+                    <p class="item-text">Pink powder you inhale; gives a light floating feeling.</p>
+                    <span class="tag-ribbon">SOLD OUT</span>
+                </div>
+            </div>
+
+        </div>
+    </main>
 
 
-  <!-- ITEM 3 --------------------------------------->
-  <div class="item-card">
-    <div class="item-img">
-      <img src="candy 2.png" style="width:100%; height:100%; object-fit:cover;">
+    <!-- RIGHT SIDEBAR -->
+    <aside class="sidebar right">
+        <img src="pinkmantis1.jpg">
+        <img src="Spider1.jpg">
+        <img src="bettle1.jpg">
+        <img src="poster4.jpg">
+    </aside>
+
+</div>
+
+
+<!-- PURCHASE MODAL -->
+<div id="purchase-modal" class="purchase-modal">
+    <div class="purchase-box">
+        <p class="purchase-title">Confirm purchase</p>
+        <p class="purchase-text">
+            Do you really want to buy <span id="product-name"></span>?<br>
+            <span>We are not responsible for any issues<br>that occur during use.</span>
+        </p>
+        <input type="email" id="purchase-email" class="purchase-input" placeholder="Enter your email">
+        <div class="purchase-actions">
+            <button onclick="confirmPurchase()">Confirm</button>
+            <button onclick="closePurchase()">Cancel</button>
+        </div>
     </div>
+</div>
+
+
+<button id="to-top-btn" onclick='window.location.href="index.html";'>
+    Back to main
+</button>
+
+
+<script>
+/* RANDOM SIDEBAR IMAGES -------------------------------- */
+function shuffleSidebarImages() {
+    document.querySelectorAll(".sidebar").forEach(sidebar => {
+        const images = Array.from(sidebar.querySelectorAll("img"));
+        for (let i = images.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [images[i], images[j]] = [images[j], images[i]];
+        }
+        sidebar.innerHTML = "";
+        images.forEach(img => sidebar.appendChild(img));
+    });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    shuffleSidebarImages();
+    setInterval(shuffleSidebarImages, 1500);
+});
+
+
+/* MODAL ----------------------------------------------- */
+let currentProduct = "";
+
+function openPurchase(name) {
+    currentProduct = name;
+    document.getElementById("product-name").textContent = name;
+    document.getElementById("purchase-modal").style.display = "flex";
+}
+
+function closePurchase() {
+    document.getElementById("purchase-modal").style.display = "none";
+}
+
+function confirmPurchase() {
+    const email = document.getElementById("purchase-email").value.trim();
+    if (!email) return alert("Enter email");
+    alert("Purchased: " + currentProduct);
+    closePurchase();
+}
+</script>
+
+</body>
+</html>
