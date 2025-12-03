@@ -20,7 +20,7 @@
 <header class="main-header">
     <img src="drugonflygraph.png">
 
-    <!-- Explora 적용 완료 버전 -->
+    <!-- Explora 적용 -->
     <h2 class="glitch"
         data-text="Brain popping pleasure!"
         style="
@@ -116,6 +116,7 @@
 </aside>
 </div>
 
+<!-- PURCHASE MODAL -->
 <div id="purchase-modal" class="purchase-modal">
   <div class="purchase-box">
     <p class="purchase-title">Confirm purchase</p>
@@ -169,6 +170,7 @@ function closePurchase() {
   document.getElementById("purchase-modal").style.display = "none";
 }
 
+/* ✅ 구글폼 메일 전송 기능 추가됨 */
 function confirmPurchase() {
   const email = document.getElementById("purchase-email").value.trim();
   if (!email) {
@@ -176,10 +178,31 @@ function confirmPurchase() {
     return;
   }
 
-  alert("Purchase request submitted for " + currentProduct + " with email: " + email);
-  closePurchase();
+  // 네 첫 번째 페이지에서 실제 메일이 전송되던 URL
+  const formURL =
+    "https://docs.google.com/forms/d/1D5BV44ocn7nVOxrMXBOEOAELT8s2BcGoi6K3LqjGRb0/formResponse";
+
+  // entry ID (절대 수정 금지)
+  const entryID = "entry.70548093";
+
+  const data = new FormData();
+  data.append(entryID, email);
+
+  fetch(formURL, {
+    method: "POST",
+    body: data,
+    mode: "no-cors"
+  })
+    .then(() => {
+      alert("Check your inbox. Yuri just slid into your mail.");
+      closePurchase();
+    })
+    .catch(() => {
+      alert("Connection error. Try again.");
+    });
 }
 </script>
 
 </body>
 </html>
+
