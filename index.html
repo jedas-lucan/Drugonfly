@@ -100,12 +100,12 @@ setInterval(moveBtnRandomly, 1200);
 // ✨ 이메일 전송 기능 추가 부분
 // ================================
 const formURL = "https://docs.google.com/forms/d/e/1FAIpQLSd3NwOYayoYjPpudruf2i0tPVFBlZJH0iy4wZhGE9zdWunRVA/formResponse";
-const entryID = "YOUR_ENTRY_ID_HERE";  // ← 반드시 네 entry 이름으로 교체
+const entryID = "entry.70548093";  // ← 반드시 네 entry 이름으로 교체
 
 document.getElementById("submitBtn").addEventListener("click", function () {
   const email = document.getElementById("emailInput").value;
   if (!email) {
-    alert("Your Email Here!");
+    alert("Your Email!");
     return;
   }
 
